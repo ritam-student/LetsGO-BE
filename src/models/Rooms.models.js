@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const RoomSchema = new Schema({
-    houseName: {
+    title: {
         type : String,
     } ,
     owner: {
@@ -54,7 +54,6 @@ const RoomSchema = new Schema({
     } ,
     type: {
         type: String,
-        enum: ["Apartment", "Pg", "Hostel", "Mess"],
         required: true
     },
     likes: [
@@ -75,20 +74,29 @@ const RoomSchema = new Schema({
           ref: "Users"
         }
     ],
-    isAC: {
+    priceUnit: {
+        type : String,
+        required : true
+    } ,
+    isAvailable: {
         type: Boolean,
         required: true
     },
-    isSingleBed: {
-        type : Boolean,
+    beds: {
+        type : String,
         required : true
-    },
-    isKitchen: {
-        type : Boolean
-    },
-    freeWifi : {
-        type: Boolean
-    },
+    } ,
+    baths: {
+        type : String,
+        required : true
+    } ,
+    amenities: [
+        {
+            id: String,
+            name: String,
+            selected: Boolean
+        }
+    ],
     reviews : [
         {
             type: mongoose.Schema.Types.ObjectId,
