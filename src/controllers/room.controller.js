@@ -78,7 +78,7 @@ export const showRoomDetails = async (req, res) => {    // add authentication ch
 
 export const  getAllHostels = async (req, res) => {
     try{
-        const allHostel = await Rooms.find({type : 'Hostel'})
+        const allHostel = await Rooms.find({type : 'hostel'})
             .populate({
                 path: 'owner',
                 model: 'Sellers',
@@ -101,7 +101,7 @@ export const  getAllHostels = async (req, res) => {
 
 export const  getAllPG = async (req, res) => {
     try{
-        const allPg = await Rooms.find({type : 'Pg'})
+        const allPg = await Rooms.find({type : 'pg'})
             .populate({
                 path: 'owner',
                 model: 'Sellers',
@@ -124,7 +124,7 @@ export const  getAllPG = async (req, res) => {
 
 export const  getAllApartment = async (req, res) => {
     try{
-        const allApartment = await Rooms.find({type : 'Apartment'})
+        const allApartment = await Rooms.find({type : 'apartment'})
             .populate({
                 path: 'owner',
                 model: 'Sellers',
@@ -145,7 +145,7 @@ export const  getAllApartment = async (req, res) => {
 
 export const getAllMess = async (req , res) => {
     try{
-        const allMess = await Rooms.find({type : 'Mess'})
+        const allMess = await Rooms.find({type : 'mess'})
             .populate({
                 path: 'owner',
                 model: 'Sellers',
